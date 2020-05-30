@@ -1,0 +1,118 @@
+<html>
+
+<head>
+  <title>
+    VITPICTURESQUE
+  </title>
+  <meta charset="utf-8">
+  <link rel="icon" href="css/images/favicon.ico">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/237874e30e.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>\
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Source+Code+Pro:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <div class="title">
+    <nav class="navbar navbar-expand-lg  bg-light">
+      <a class="navbar-brand navbar-text" href="#"><img src="css/images/logo.jpg" width="40" height="40" style="border-radius:100%;" class="d-inline-block align-top" alt="">VITPICTURESQUE</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#footer">
+              Contact
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login">
+              Log Out
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</head>
+
+<body>
+  <% if(name.length==0){%>
+    <div style="height:100%; margin-top:100px;">
+      <h1>No images to show</h1>
+    </div>
+  <%} else { %>
+<div class="dis_car">
+  <div id="carouselExampleControls" class="carousel slide krose" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <label for="">&nbsp;&nbsp;Name:&nbsp;<label><%=name[0].user_name%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label></label>
+      <label for="">&nbsp;&nbsp;Insta_id:&nbsp;<label><%=name[0].insta_id%></label></label><br>
+      <label for="">&nbsp;&nbsp;Caption:&nbsp;<label><%=name[0].pic_info.caption%></label></label><br>
+      <img class="d-block test-img" style="margin:0% auto 3% auto"; name=<%=name[0]._id%> src="uploads/<%=name[0].pic_info.pic_name%>" alt="First slide">
+    </div>
+    <%for(var p=1;p<name.length;p++){%>
+    <div class="carousel-item ">
+      <label for="">&nbsp;&nbsp;Name:&nbsp;<label><%=name[p].user_name%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label></label>
+      <label for="">&nbsp;&nbsp;Insta_id:&nbsp;<label><%=name[p].insta_id%></label></label><br>
+      <label for="">&nbsp;&nbsp;Caption:&nbsp;<label><%=name[p].pic_info.caption%></label></label><br>
+      <img class="d-block test-img" style="margin:0% auto 3% auto"; name=<%=name[p]._id%> src="uploads/<%=name[p].pic_info.pic_name%>" alt="First slide">
+    </div>
+  <% } %>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+</div>
+
+</div>
+
+<div class="row" style="margin-top:25px";>
+  <div class="db col-lg-6 col-md-6 col-sm-6">
+    <a id="down_img" href="#" download onClick="down()"><button  type="button" name="button" >Download</button></a>
+  </div>
+  <div class=" del col-lg-6 col-md-6 col-sm-6">
+      <button  type="button" name="button"onClick="delv()">Delete</button>
+  </div>
+
+
+
+</div>
+  <form  action="/imgdis" method="post" class="frm" onsubmit="del()">
+
+  <input type="text" id="del_ip" name="del_id" value="" hidden>
+
+  <input type="submit" id="sub" class="db" name="" value="del"hidden >
+  </form>
+<%}%>
+<script type="text/javascript">
+  function down(){
+    x=document.querySelector(".active img");
+    /*var a= document.querySeletor(".active");*/
+    var a=x.getAttribute("src");
+    document.querySelector("#down_img").setAttribute("href",a);
+  }
+  function del(){
+    var y=document.querySelector(".active img");
+    var a=y.getAttribute("name");
+    var x=document.querySelector("#del_ip");
+    x.setAttribute("value",a);
+
+
+  }
+  function delv(){
+    document.querySelector("#sub").click();
+  }
+</script>
+
+<%- include("partials/footer.ejs")-%>

@@ -1,0 +1,173 @@
+
+h1{
+  text-align: center;
+  font-family:"Source Code Pro";
+}
+.title{
+  font-family:"Source Code Pro";
+}
+.icon{
+  color:white;
+}
+.navbar{
+  height:70px;
+  border-bottom:1px;
+}
+.navbar-brand.navbar-text{
+  font-size:30px;
+  color:black;
+
+}
+.top{
+  margin-top:50px;
+  margin-bottom:30px;
+  margin-left:auto;
+  margin-right:auto;
+  width:75%;
+
+  height:360px;
+  background-size:100% 100%;
+  background-repeat: no-repeat;
+  border:1px solid;
+}
+.upimg{
+
+  /* Full height */
+  height: 100%;
+background-image:url("images/bg.jpg");
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.uptext{
+margin:auto;
+background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+  position: absolute;
+  margin-top:40px;
+}
+.mid{
+
+  margin:30px auto 30px auto;
+  text-align: center;
+  font-family:"Source Code Pro";
+
+
+
+}
+.test-img{
+  position:relative;
+  height:70%;
+  width:60%;
+  margin:3% auto 3% auto;
+  border:1px solid;
+
+}
+.carousel{
+  width:75%;
+  height:450px;
+  margin:auto;
+}
+.carousel-inner{
+  background-color:#e8e4e1;
+}
+.imgdiv{
+  position:absolute;
+  width:100%;
+  background-image:url("images/bg.jpg");
+   filter: blur(8px);
+  -webkit-filter: blur(8px);
+  opacity:0.7;
+  background-color:rgba(0,0,0,0.5);
+  height:100%;
+
+}
+
+.foo{
+  text-align:center;
+  font-family:"Source Code Pro";
+  background-color:#f7f7f7;
+
+}
+.form1
+{
+  padding: 30px 30px 30px 30px;
+  margin:50px auto auto auto;
+  width:400px;
+  color:black;
+
+}
+#custom-button {
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+#custom-text {
+  margin-left: 10px;
+  font-family: sans-serif;
+  color: #aaa;
+}
+.dis_car{
+  margin-top:10px;
+  margin-bottom:-50px;
+
+}
+.frm{
+  margin-left:500px;
+}
+#down_img {
+}
+.db{
+  text-align:right;}
+  @media (max-width: 700px) {
+   /* CSS that should be displayed if width is equal to or less than 800px goes here */
+   .db{
+     padding-left:0;
+     text-align:right;
+     margin-top:25px;
+   }
+   .col-sm-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.del{
+  margin-top: 25px;
+}
+ }
+
+.krose{
+  margin-top:50px;
+}
+.disdiv{
+  position:absolute;
+  width:100%;
+  height:100%;
+
+}
+.ptext{
+  width:content;
+  font-family: 'Source Code Pro', monospace;
+  color:white;
+
+  background-color:rgba(0,0,0,0.4);
+  margin:0 0 1% 5%;
+  padding:0 0 0 0;
+  height:25%;
+  width:60%;
+}
+.cap{
+  font-size:150%;
+}

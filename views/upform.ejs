@@ -1,0 +1,32 @@
+<%- include("partials/header.ejs")-%>
+
+<form class="text-center"  enctype="multipart/form-data" action="/upform" method="post" onsubmit="return img_val()">
+
+    <div class="form1 border border-light" >
+      <p class="h4 mb-4"><strong>Details</strong></p>
+
+      <!-- Name -->
+
+    <input type="text" name="name" pattern="[A-Z a-z]{3,}" required="true" id="defaultContactFormName" class="form-control mb-4" placeholder="Enter your name">
+    <input type="text" name="instaid" pattern="([A-Za-z0-9_](?:(?:[A-Za-z0-9_]|(?:\\.(?!\\.))){0,28}(?:[A-Za-z0-9_]))?)"  id="defaultContactFormName" class="form-control mb-4" placeholder="Insta id">
+
+      <!-- Subject -->
+
+      <!-- Message -->
+      <label class="btn btn-info btn-block" id="custom-button">
+        choose file to upload<input required="true" type="file"id="real-file" name="image" accept="image/*"  hidden>
+      </label>
+      <span id="custom-text">No file chosen, yet.</span>
+<textarea name="caption" maxlength="100"  rows="4" cols="10" id="defaultContactFormName" class="form-control mb-4" placeholder="Give suitable caption for your image (max 100 characters)"></textarea>
+      <!-- Copy -->
+
+
+      <!-- Send button -->
+      <button class="btn btn-info btn-block" type="submit">Send</button>
+
+
+    </div>
+
+</form>
+<script src="script/script.js"></script>
+<%- include("partials/footer.ejs")-%>
