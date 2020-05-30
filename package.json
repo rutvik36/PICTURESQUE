@@ -9,6 +9,9 @@
   },
   "author": "Rutvik",
   "license": "ISC",
+  "engines":{
+    "node":"12.16.1"
+  },
   "dependencies": {
     "base64-to-image": "^1.0.2",
     "body-parser": "^1.19.0",
