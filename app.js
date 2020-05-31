@@ -69,12 +69,12 @@ app.post("/login",function(req,res){
   var r=[];
   const name = req.body.uname;
   const pass = md5(req.body.password);
-  let admin = new Admin({
+  /*let admin = new Admin({
     name:name,
     password:pass
   });
-  admin.save(function(err){if(!err){res.render("success",{result:"Admin Added"});}});
-  /*Admin.findOne({
+  admin.save(function(err){if(!err){res.render("success",{result:"Admin Added"});}});*/
+  Admin.findOne({
     name:name
   }, function(err, admin) {
     if (err) {
@@ -97,7 +97,7 @@ app.post("/login",function(req,res){
            }
 
            //console.log(r.length);
-           /*if(r.length==0){
+           if(r.length==0){
              res.render("success",{result:"No images to show"});
            }else
            setTimeout(function() {res.render("imgdis",{name:r});},2000);
@@ -114,7 +114,7 @@ app.post("/login",function(req,res){
         }
       }
     }
-  });*/
+  });
 });
 app.post("/imgdis",function(req,res){
 
