@@ -49,6 +49,7 @@ app.get("/upform",function(req,res){
 });
 app.get("/login",function(req,res){
   //console.log("login");
+
   fs.readdir('public/uploads/', (err, files) => {
             if (err) console.log(err);
             for (const file of files) {
@@ -68,7 +69,12 @@ app.post("/login",function(req,res){
   var r=[];
   const name = req.body.uname;
   const pass = md5(req.body.password);
-  Admin.findOne({
+  let admin = new Admin({
+    name:name,
+    password:pass
+  });
+  admin.save(function(err){if(!err){res.render("success",{result:"Admin Added"});}});
+  /*Admin.findOne({
     name:name
   }, function(err, admin) {
     if (err) {
@@ -93,7 +99,7 @@ app.post("/login",function(req,res){
            //console.log(r.length);
            /*if(r.length==0){
              res.render("success",{result:"No images to show"});
-           }else*/
+           }else
            setTimeout(function() {res.render("imgdis",{name:r});},2000);
           });
 
@@ -108,9 +114,10 @@ app.post("/login",function(req,res){
         }
       }
     }
-  });
+  });*/
 });
 app.post("/imgdis",function(req,res){
+
   id=req.body.del_id;
   var n;
   var query = { _id: id };
