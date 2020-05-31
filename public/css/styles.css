@@ -86,7 +86,7 @@ background-color: rgb(0,0,0); /* Fallback color */
 .imgdiv{
   position:absolute;
   width:100%;
-  background-image:url("images/bg.jpg");
+  background-image:url("images/I1.JPG");
    filter: blur(8px);
   -webkit-filter: blur(8px);
   opacity:0.7;
