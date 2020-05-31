@@ -97,9 +97,6 @@ app.post("/login",function(req,res){
            }
 
            //console.log(r.length);
-           if(r.length==0){
-             res.render("success",{result:"No images to show"});
-           }else
            setTimeout(function() {res.render("imgdis",{name:r});},2000);
           });
 
